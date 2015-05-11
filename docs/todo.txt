@@ -1,0 +1,29 @@
+- remove IOException
+
+- how to quit the app?
+- should I model user at this point (even as tiny type)?
+- add time ago
+- trim input
+- make return of command.execute Optional
+
+#uhm... errm...
+- equals/hashcode on Commands just to test
+- is there really no better way to use regexes in java?
+- should i put command parsing logic in CommandParser or in Command objects?
+- should we have a Post object
+- should commands return String or something more generic like Serializable?
+- should timestamp creation happen in command or in post object?
+
+# known issues
+- "moments ago" instead of x seconds ago
+
+POSTS
+  save(user, msg)
+  read(user)
+
+FRIENDS
+  follow(user, friend)
+  friends(user)
+
+WALL
+  read(user) -> POSTS.read(user) + for each f in FRIENDS.friends(user) { POSTS.read(f) }

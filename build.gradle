@@ -3,17 +3,19 @@ apply plugin: 'java'
 version = '0.1'
 
 repositories {
-  mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-  testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'org.ocpsoft.prettytime:prettytime:4.0.0.Final'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:1.10.19'
 }
 
 uploadArchives {
-  repositories {
-    flatDir {
-      dirs 'repos'
+    repositories {
+        flatDir {
+            dirs 'repos'
+        }
     }
-  }
 }
