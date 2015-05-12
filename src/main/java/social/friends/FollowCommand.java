@@ -17,6 +17,6 @@ public class FollowCommand implements Command {
     @Override
     public Object execute() {
         friends.follow(user, friend);
-        return ""; // FIXME
+        return null;
     }
 }

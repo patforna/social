@@ -8,6 +8,9 @@ import static java.util.stream.Collectors.joining;
 public class Serializer {
 
     public String serialize(Object o) {
+        if (o == null)
+            return null;
+
         if (o instanceof Collection) {
             Stream<String> stream = ((Collection) o).stream().map(String::valueOf);
             return stream.collect(joining("\n"));

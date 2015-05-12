@@ -23,6 +23,6 @@ public class PostCommand implements Command {
     @Override
     public String execute() {
         posts.save(new Post(now(clock), user, message));
-        return ""; // FIXME
+        return null;
     }
 }

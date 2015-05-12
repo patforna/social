@@ -1,6 +1,7 @@
 package social.app;
 
 import java.io.*;
+import java.util.Optional;
 
 public class SocialApp {
 
@@ -23,8 +24,7 @@ public class SocialApp {
         prompt(out);
         new BufferedReader(in).lines().forEach(line -> {
             try {
-                String output = run(line);
-                out.println(output);
+                Optional.ofNullable(run(line)).ifPresent(out::println);
             } catch (Exception e) {
                 out.printf("Oops: %s. Try again or type Ctrl-C to quit.\n", e.getMessage());
             }

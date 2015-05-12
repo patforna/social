@@ -4,10 +4,9 @@
   - how to quit the app? -> Ctrl C
 - add docker file
 
-- make return of command.execute Optional
+
 
 - remove IOException / introduce console?
-
 
 
 #uhm... errm...
@@ -18,6 +17,7 @@
 - should timestamp creation happen in command or in post object?
 - should I model user at this point (even as tiny type)?
 - make execute SocialApp#run public for easier testing
+- make return of command.execute Optional
 
 # known issues / todos
 - "moments ago" instead of x seconds ago
