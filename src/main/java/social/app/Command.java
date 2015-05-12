@@ -1,6 +1,4 @@
-package social;
-
-import java.io.Serializable;
+package social.app;
 
 public interface Command {
     Object execute();

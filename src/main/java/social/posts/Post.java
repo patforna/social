@@ -1,12 +1,12 @@
-package social;
+package social.posts;
 
 import org.ocpsoft.prettytime.PrettyTime;
 
 import java.sql.Date;
-import java.time.Clock;
 import java.time.Instant;
 
 public class Post {
+
     private final Instant created;
     private final String user;
     private final String message;

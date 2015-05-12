@@ -1,14 +1,14 @@
-package social;
+package social.app;
 
 import org.junit.Test;
+import social.app.Serializer;
 
 import java.util.Collection;
 
-import static java.lang.String.*;
 import static java.util.Arrays.asList;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 public class SerializerTest {
 

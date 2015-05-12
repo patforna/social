@@ -1,9 +1,10 @@
-package social;
+package social.posts;
 
 import org.junit.Test;
+import social.posts.Post;
 
 import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 import static social.Helpers.now;
 
 public class PostTest {

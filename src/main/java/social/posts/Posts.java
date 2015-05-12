@@ -1,12 +1,15 @@
-package social;
+package social.posts;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static java.util.Arrays.asList;
 
 public class Posts {
 
-    private Map<String, List<Post>> store = new HashMap<>();
+    private final Map<String, List<Post>> store = new HashMap<>();
 
     public void save(Post post) {
         String user = post.getUser();
@@ -16,7 +19,7 @@ public class Posts {
             store.get(user).add(post);
     }
 
-    public List<Post> read(String user) {
+    public List<Post> find(String user) {
         return store.get(user);
     }
 }

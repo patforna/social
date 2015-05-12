@@ -1,8 +1,11 @@
-package social;
+package social.app;
 
 import org.junit.Test;
+import social.app.Command;
+import social.app.CommandParser;
+import social.app.Serializer;
+import social.app.SocialApp;
 
-import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringReader;
 import java.io.StringWriter;
@@ -10,11 +13,9 @@ import java.io.StringWriter;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
-public class SocialAppTests {
+public class SocialAppTest {
 
     private CommandParser parser = mock(CommandParser.class);
 

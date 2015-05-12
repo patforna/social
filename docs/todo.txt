@@ -1,10 +1,12 @@
 - remove IOException
 
+- TODOs and FIXMEs
 - how to quit the app?
 - should I model user at this point (even as tiny type)?
 - add time ago
 - trim input
 - make return of command.execute Optional
+- order wall posts by date
 
 #uhm... errm...
 - equals/hashcode on Commands just to test
@@ -13,6 +15,7 @@
 - should we have a Post object
 - should commands return String or something more generic like Serializable?
 - should timestamp creation happen in command or in post object?
+-
 
 # known issues
 - "moments ago" instead of x seconds ago

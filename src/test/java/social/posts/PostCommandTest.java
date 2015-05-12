@@ -1,8 +1,9 @@
-package social;
+package social.posts;
 
 import org.junit.Test;
-
-import java.time.Instant;
+import social.posts.Post;
+import social.posts.PostCommand;
+import social.posts.Posts;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
