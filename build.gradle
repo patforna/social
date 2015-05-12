@@ -4,6 +4,10 @@ apply plugin: 'application'
 version = '0.1'
 mainClassName = 'social.app.SocialApp'
 
+run {
+    standardInput = System.in
+}
+
 repositories {
     mavenCentral()
 }
