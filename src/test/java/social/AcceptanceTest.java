@@ -8,9 +8,7 @@ import social.friends.Friends;
 import social.posts.Posts;
 import social.wall.Wall;
 
-import java.io.PrintWriter;
-import java.io.StringReader;
-import java.io.StringWriter;
+import java.io.*;
 import java.time.Clock;
 
 import static java.time.Clock.offset;
@@ -25,7 +23,9 @@ public class AcceptanceTest {
     private final Posts posts = new Posts();
     private final Friends friends = new Friends();
     private final Wall wall = new Wall(friends, posts);
-    private final SocialApp app = new SocialApp(new CommandParser(posts, friends, wall, twoMinsAgo), new Serializer());
+    private final CommandParser parser = new CommandParser(posts, friends, wall, twoMinsAgo);
+    private final Serializer serializer = new Serializer();
+    private final SocialApp app = new SocialApp(parser, serializer, false);
 
     @Test
     public void shouldBeAbleToReadPosts() throws Exception {
@@ -49,8 +49,8 @@ public class AcceptanceTest {
     }
 
     private String run(String command) throws Exception {
-        StringWriter out = new StringWriter();
-        app.run(new StringReader(command + "\n"), new PrintWriter(out));
+        ByteArrayOutputStream out = new ByteArrayOutputStream();
+        app.run(new StringReader(command + "\n"), new PrintStream(out));
         return out.toString().trim();
     }
 }

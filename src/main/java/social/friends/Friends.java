@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import static java.util.Arrays.asList;
+import static java.util.Collections.emptyList;
 
 public class Friends {
 
@@ -19,6 +20,6 @@ public class Friends {
     }
 
     public List<String> find(String user) {
-        return store.get(user);
+        return store.containsKey(user) ? store.get(user) : emptyList();
     }
 }

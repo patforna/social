@@ -1,6 +1,8 @@
 apply plugin: 'java'
+apply plugin: 'application'
 
 version = '0.1'
+mainClassName = 'social.app.SocialApp'
 
 repositories {
     mavenCentral()

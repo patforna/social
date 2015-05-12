@@ -5,6 +5,7 @@ import social.posts.Post;
 import social.posts.Posts;
 
 import static org.hamcrest.CoreMatchers.hasItems;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 import static social.Helpers.now;
 
@@ -26,5 +27,10 @@ public class PostsTest {
         posts.save(p1);
         posts.save(p2);
         assertThat(posts.find(user), hasItems(p1, p2));
+    }
+
+    @Test
+    public void shouldReturnEmptyListIfNoPosts() {
+        assertThat(posts.find(user).size(), is(0));
     }
 }

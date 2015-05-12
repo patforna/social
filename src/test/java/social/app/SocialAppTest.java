@@ -1,14 +1,6 @@
 package social.app;
 
 import org.junit.Test;
-import social.app.Command;
-import social.app.CommandParser;
-import social.app.Serializer;
-import social.app.SocialApp;
-
-import java.io.PrintWriter;
-import java.io.StringReader;
-import java.io.StringWriter;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -23,12 +15,12 @@ public class SocialAppTest {
 
     private Serializer serializer = mock(Serializer.class);
 
-    private SocialApp app = new SocialApp(parser, serializer);
+    private SocialApp app = new SocialApp(parser, serializer, false);
 
     @Test
     public void shouldParseInputAndExecuteCommand() throws Exception {
         when(parser.parse("foo")).thenReturn(command);
-        run("foo");
+        app.run("foo");
         verify(command).execute();
     }
 
@@ -37,13 +29,6 @@ public class SocialAppTest {
         when(command.execute()).thenReturn("bar");
         when(parser.parse(any())).thenReturn(command);
         when(serializer.serialize("bar")).thenReturn("baz");
-        assertThat(run("foo"), is("baz"));
-    }
-
-    // FIXME DRY
-    private String run(String command) throws Exception {
-        StringWriter out = new StringWriter();
-        app.run(new StringReader(command + "\n"), new PrintWriter(out));
-        return out.toString().trim();
+        assertThat(app.run("foo"), is("baz"));
     }
 }

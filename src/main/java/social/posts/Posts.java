@@ -1,11 +1,9 @@
 package social.posts;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static java.util.Arrays.asList;
+import static java.util.Collections.emptyList;
 
 public class Posts {
 
@@ -20,6 +18,6 @@ public class Posts {
     }
 
     public List<Post> find(String user) {
-        return store.get(user);
+        return store.containsKey(user) ? store.get(user) : emptyList();
     }
 }

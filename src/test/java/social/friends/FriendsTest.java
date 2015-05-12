@@ -1,9 +1,9 @@
 package social.friends;
 
 import org.junit.Test;
-import social.friends.Friends;
 
 import static org.hamcrest.CoreMatchers.hasItems;
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 public class FriendsTest {
@@ -16,5 +16,10 @@ public class FriendsTest {
         friends.follow(user, friendOne);
         friends.follow(user, friendTwo);
         assertThat(friends.find(user), hasItems(friendOne, friendTwo));
+    }
+
+    @Test
+    public void shouldReturnEmptyListIfNoFriends() {
+        assertThat(friends.find(user).size(), is(0));
     }
 }

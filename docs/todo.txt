@@ -1,32 +1,24 @@
-- remove IOException
+- add README
+  - build
+  - run
+  - how to quit the app? -> Ctrl C
+- add docker file
 
-- TODOs and FIXMEs
-- how to quit the app?
-- should I model user at this point (even as tiny type)?
-- add time ago
-- trim input
 - make return of command.execute Optional
-- order wall posts by date
+
+- remove IOException / introduce console?
+
+
 
 #uhm... errm...
 - equals/hashcode on Commands just to test
 - is there really no better way to use regexes in java?
 - should i put command parsing logic in CommandParser or in Command objects?
-- should we have a Post object
 - should commands return String or something more generic like Serializable?
 - should timestamp creation happen in command or in post object?
--
+- should I model user at this point (even as tiny type)?
+- make execute SocialApp#run public for easier testing
 
-# known issues
+# known issues / todos
 - "moments ago" instead of x seconds ago
-
-POSTS
-  save(user, msg)
-  read(user)
-
-FRIENDS
-  follow(user, friend)
-  friends(user)
-
-WALL
-  read(user) -> POSTS.read(user) + for each f in FRIENDS.friends(user) { POSTS.read(f) }
+- order wall posts by date
