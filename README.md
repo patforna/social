@@ -1,5 +1,7 @@
 # Social App
 
+For context, see [docs/instructions.txt](docs/instructions).
+
 ## Prerequisites
 
 Make sure you've got the following installed:
