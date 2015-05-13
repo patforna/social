@@ -4,7 +4,7 @@
 
 Make sure you've got the following installed:
 
-* Docker 1.6.x or
+* Docker 1.6.x
 * Java 8 (if not using docker)
 * Gradle 2.x (for development)
 
@@ -12,7 +12,7 @@ Make sure you've got the following installed:
 
 ### Docker
 
-If you've got docker installed, this is probably the easiest way of running the app:
+This is probably the easiest way to run the app:
 
     $ docker run -t -i patforna/social:0.1
     ------------------------------------------------------------------------
@@ -30,7 +30,6 @@ If you've got docker installed, this is probably the easiest way of running the 
 ### Java Binary
 
 Alternatively, you can download the [latest binary distribution](https://github.com/patforna/social/releases).
-
 Then unpack it and execute the provided start script:
 
     $ unzip social-*.zip
