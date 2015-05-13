@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-gradle distZip
+gradle build
