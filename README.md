@@ -1,6 +1,6 @@
 # Social App
 
-For context, see [docs/instructions.txt](docs/instructions).
+For context, see [docs/instructions.txt](docs/instructions.txt).
 
 ## Prerequisites
 
