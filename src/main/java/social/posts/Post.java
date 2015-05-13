@@ -17,6 +17,10 @@ public class Post {
         this.message = message;
     }
 
+    public Instant getCreated() {
+        return created;
+    }
+
     public String getUser() {
         return user;
     }

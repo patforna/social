@@ -67,7 +67,6 @@ To start the app, run:
 I know these issues exist but decided not to fix them:
 
 * for posts newer than 1 min, message reads "moments ago" instead of "x seconds ago".
-* wall posts are not ordered by date.
 
 ## Notes
 

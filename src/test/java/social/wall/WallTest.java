@@ -6,7 +6,6 @@ import social.posts.Post;
 import social.posts.Posts;
 
 import static java.util.Arrays.asList;
-import static java.util.Collections.emptyList;
 import static org.hamcrest.CoreMatchers.hasItems;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
@@ -22,16 +21,16 @@ public class WallTest {
 
     private String ali = "ali";
     private String bob = "bob";
-    private Post p1 = new Post(now, ali, "a-m1");
-    private Post p2 = new Post(now, bob, "b-m1");
-    private Post p3 = new Post(now, bob, "b-m2");
+    private Post a1 = new Post(now, ali, "a-m1");
+    private Post b1 = new Post(now.minusSeconds(60), bob, "b-m1");
+    private Post b2 = new Post(now.plusSeconds(60), bob, "b-m2");
 
     @Test
-    public void shouldSaveAndReadPosts() {
+    public void shouldSaveAndListPostsInChronologicalOrder() {
         when(friends.find(ali)).thenReturn(asList(bob));
-        when(posts.find(ali)).thenReturn(asList(p1));
-        when(posts.find(bob)).thenReturn(asList(p2, p3));
+        when(posts.find(ali)).thenReturn(asList(a1));
+        when(posts.find(bob)).thenReturn(asList(b1, b2));
 
-        assertThat(wall.find(ali), hasItems(p1, p2, p3));
+        assertThat(wall.find(ali), is(asList(b1, a1, b2)));
     }
 }
