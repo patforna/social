@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-Make sure you've got the following prerequisites installed:
+Make sure you've got the following installed:
 
 * Java 8
 * Gradle 2.x (only for development)
@@ -13,9 +13,20 @@ Download the [latest binary distribution](https://github.com/patforna/social/rel
 
 Then unpack it and execute the provided start script:
 
-    $ unzip ... 
-    $ cd social-*
-    $ bin/run
+    $ unzip social-*.zip
+    $ cd social-*/
+    $ bin/social
+    ------------------------------------------------------------------------
+     Hi! Please type some commands:
+    ------------------------------------------------------------------------
+     <user> -> <msg>           Post a new message
+     <user>                    Read posts
+     <user> follows <other>    Follow other user
+     <user> wall               Read wall posts
+     Ctrl-C                    Quit.
+    ------------------------------------------------------------------------
+
+    >
 
 ## Development
 
