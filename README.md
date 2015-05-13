@@ -63,8 +63,6 @@ To start the app, run:
 
 ## Known Issues
 
-I know these issues exist but decided not to fix them:
-
 * for posts newer than 1 min, message reads "moments ago" instead of "x seconds ago".
 
 ## Notes
